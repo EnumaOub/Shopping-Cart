@@ -1,14 +1,17 @@
 import { NavBar } from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer"
 
 export default function Home() {
     let push = useNavigate();
 
     return (
         <div id="home">
-            <header>
-
-            </header>
+            <Header 
+            name ="Welcome to Shop"
+            >
+            </Header>
 
             <NavBar>
 
@@ -28,9 +31,7 @@ export default function Home() {
 
             <div id="reviews"></div>
 
-            <footer>
-
-            </footer>
+            <Footer></Footer>
         </div>
 
     );

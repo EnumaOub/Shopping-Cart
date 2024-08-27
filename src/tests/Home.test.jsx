@@ -24,14 +24,12 @@ beforeEach(() => {
 })
 
 describe("HomePage", () => {
-    it("Should render button to shop", () => {
+    it("Find Button and click", async () => {
+
         const button = screen.getByText(/Enter the Shop/i);
+
+
         expect(button).toBeInTheDocument();
-    });
-
-    it("Button move to Shop Page", async () => {
-
-        const button = screen.getByText(/Enter the Shop/i);
 
         fireEvent.click(button)
         expect(mockedUseNavigate).toBeCalled()
