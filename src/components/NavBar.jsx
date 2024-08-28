@@ -4,6 +4,25 @@ import {
 
 export function NavBar() {
     return (
-        <>NavBar</>
+        <nav id="navBar">
+            <li>
+                <NavLink to="/"
+                 activeClassName="active" >
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/shop"
+                 activeClassName="active" >
+                    Shop
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/cart"
+                 activeClassName="active" >
+                    Cart
+                </NavLink>
+            </li>  
+        </nav>
     );
 }

@@ -1,4 +1,4 @@
-import { NavBar } from "../components/NavBar";
+
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer"
@@ -9,13 +9,12 @@ export default function Home() {
     return (
         <div id="home">
             <Header 
-            name ="Welcome to Shop"
+            name = "Mystic Emporium"
+            tagline = "Your Gateway to Enchanted Artifacts"
             >
             </Header>
 
-            <NavBar>
-
-            </NavBar>
+            
 
             <div id="enter">
                 <button id="enter-shop"
