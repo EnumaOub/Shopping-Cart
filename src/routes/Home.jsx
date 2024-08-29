@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer"
+import ReviewList from "../components/ReviewList";
 
 export default function Home() {
     let push = useNavigate();
@@ -28,7 +29,7 @@ export default function Home() {
 
             </div>
 
-            <div id="reviews"></div>
+            <ReviewList />
 
             <Footer></Footer>
         </div>
