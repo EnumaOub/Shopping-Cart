@@ -27,6 +27,24 @@ export function CardProduct({
 };
 
 
+CardProduct.propTypes = {
+    name: PropTypes.string.isRequired,          
+    imageUrl: PropTypes.string.isRequired,      
+    price: PropTypes.number.isRequired,        
+    description: PropTypes.string,
+    onAddToCart: PropTypes.func, 
+    isAvailable: PropTypes.bool,    
+    rating: PropTypes.number, 
+};
+
+CardProduct.defaultProps = {
+    description: '',             
+    onAddToCart: () => {},        
+    isAvailable: true,            
+    rating: null,
+};
+
+
 const Card = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -72,19 +90,3 @@ const Button = styled.button`
   }
 `;
 
-CardProduct.propTypes = {
-    name: PropTypes.string.isRequired,          
-    imageUrl: PropTypes.string.isRequired,      
-    price: PropTypes.number.isRequired,        
-    description: PropTypes.string,
-    onAddToCart: PropTypes.func, 
-    isAvailable: PropTypes.bool,    
-    rating: PropTypes.number, 
-};
-
-CardProduct.defaultProps = {
-    description: '',             
-    onAddToCart: () => {},        
-    isAvailable: true,            
-    rating: null,
-};
