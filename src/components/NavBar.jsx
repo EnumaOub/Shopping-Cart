@@ -5,7 +5,6 @@ import styled from 'styled-components';
 export function NavBar() {
     return (
         <StyledNav>
-      <Logo>Mystic Emporium</Logo>
       <NavLinks>
         <StyledNavLink to="/"
                  activeClassName="active" >Home</StyledNavLink>
@@ -25,12 +24,14 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 `;
 
 const Logo = styled.h1`
   color: #fff;
   font-family: 'MedievalSharp', cursive;
   font-size: 1.8rem;
+  margin-top: 1.8rem;
 `;
 
 const NavLinks = styled.div`

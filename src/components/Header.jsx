@@ -1,15 +1,53 @@
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { NavBar } from "../components/NavBar";
 
 export default function Header({ name, tagline }) {
     return (
-        <header>
-            <h1 className="title">
-                {name}
-            </h1>
-            <h3 className="tagline">
-                {tagline}
-            </h3>
-            <NavBar></NavBar>
-        </header>
-    )
-}
+        <StyledHeader>
+            <LogoContainer>
+                <Logo>{name}</Logo>
+                {tagline && <Tagline>{tagline}</Tagline>}
+            </LogoContainer>
+            <NavBar /> 
+        </StyledHeader>
+      );
+};
+
+Header.propTypes = {
+    name: PropTypes.string,  
+    tagline: PropTypes.string,    
+};
+  
+
+Header.defaultProps = {
+    name: 'Mystic Emporium',  
+    tagline: '',                 
+};
+    
+const StyledHeader = styled.header`
+      background-color: #333;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+`;
+    
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Logo = styled.h1`
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2rem;
+  color: #f39c12;
+`;
+
+const Tagline = styled.p`
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 4px;
+`;

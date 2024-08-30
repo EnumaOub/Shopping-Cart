@@ -1,9 +1,13 @@
 import { CardProduct } from "../components/CardProduct";
+import Header from "../components/Header";
 
 export function Shop() {
     return (
         <div id="shop">
-            <h1>Welcome to SHOP</h1>
+            <Header 
+            name = "Welcome to SHOP"
+            >
+            </Header>
             <CardProduct 
                 name="Mystic Sword"
                 imageUrl="https://example.com/mystic-sword.jpg"
