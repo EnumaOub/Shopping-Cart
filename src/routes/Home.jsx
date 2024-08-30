@@ -2,15 +2,15 @@
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import Header from "../components/Header";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import ReviewList from "../components/ReviewList";
 
 const reviews = [
-    { id: 1, author: "Gandalf the Grey", content: "A fine selection of mystical items. Highly recommend the potions!", rating: 5 },
+    { id: 1, author: "Zorian Kazinski", content: "A fine selection of mystical items. Highly recommend the potions!", rating: 5 },
     { id: 2, author: "Frodo Baggins", content: "The enchanted rings here are truly one of a kind.", rating: 4 },
     { id: 3, author: "Daenerys Targaryen", content: "The dragon eggs are exquisite. Would buy again!", rating: 5 },
     { id: 4, author: "Hermione Granger", content: "The spell books are well organized and very informative.", rating: 4 },
-    { id: 5, author: "Aragorn", content: "Weapons are of excellent quality, perfect for any ranger.", rating: 5 }
+    { id: 5, author: "Yerin Arelius", content: "Weapons are of excellent quality, perfect for any swordwoman.", rating: 5 }
   ];
 
 
@@ -49,7 +49,7 @@ export default function Home() {
                 ))}
           </ReviewsContainer>
 
-            <Footer></Footer>
+            <Footer />
         </div>
 
     );

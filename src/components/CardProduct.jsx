@@ -45,8 +45,10 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 20rem;
   height: auto;
+  display: block;
+  align-item: center;
 `;
 
 const Info = styled.div`
