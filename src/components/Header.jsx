@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavBar } from "../components/NavBar";
 
-export default function Header({ name, tagline }) {
+export default function Header({ name, tagline='' }) {
     return (
         <StyledHeader>
             <LogoContainer>
@@ -19,11 +19,6 @@ Header.propTypes = {
     tagline: PropTypes.string,    
 };
   
-
-Header.defaultProps = {
-    name: 'Mystic Emporium',  
-    tagline: '',                 
-};
     
 const StyledHeader = styled.header`
       background-color: #333;

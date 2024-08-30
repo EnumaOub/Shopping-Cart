@@ -6,10 +6,10 @@ export function CardProduct({
     name, 
     imageUrl, 
     price, 
-    description, 
-    onAddToCart, 
+    description = '', 
+    onAddToCart = () => {}, 
     isAvailable = true, 
-    rating }) {
+    rating = null }) {
     return (
       <Card>
         <Image src={imageUrl} alt={name} />
@@ -36,14 +36,6 @@ CardProduct.propTypes = {
     isAvailable: PropTypes.bool,    
     rating: PropTypes.number, 
 };
-
-CardProduct.defaultProps = {
-    description: '',             
-    onAddToCart: () => {},        
-    isAvailable: true,            
-    rating: null,
-};
-
 
 const Card = styled.div`
   border: 1px solid #ddd;

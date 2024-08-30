@@ -6,12 +6,9 @@ export function NavBar() {
     return (
         <StyledNav>
       <NavLinks>
-        <StyledNavLink to="/"
-                 activeClassName="active" >Home</StyledNavLink>
-        <StyledNavLink to="/shop"
-                 activeClassName="active" >Shop</StyledNavLink>
-        <StyledNavLink to="/cart"
-                 activeClassName="active" >Cart</StyledNavLink>
+        <StyledNavLink to="/">Home</StyledNavLink>
+        <StyledNavLink to="/shop">Shop</StyledNavLink>
+        <StyledNavLink to="/cart">Cart</StyledNavLink>
       </NavLinks>
     </StyledNav>
         
