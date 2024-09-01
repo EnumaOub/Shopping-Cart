@@ -5,7 +5,8 @@
       "imageUrl": "https://example.com/images/enchanted_sword.jpg",
       "description": "A sword imbued with mystical powers, capable of cutting through any material.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 150
     },
     {
       "id": "2",
@@ -13,7 +14,8 @@
       "imageUrl": "https://example.com/images/mystic_amulet.jpg",
       "description": "An amulet that enhances the wearer's magical abilities.",
       "isAvailable": false,
-      "rating": 4
+      "rating": 4,
+      "price": 75
     },
     {
       "id": "3",
@@ -21,7 +23,8 @@
       "imageUrl": "https://example.com/images/potion_of_healing.jpg",
       "description": "A potion that restores health instantly.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 25
     },
     {
       "id": "4",
@@ -29,7 +32,8 @@
       "imageUrl": "https://example.com/images/cloak_of_invisibility.jpg",
       "description": "A cloak that renders the wearer invisible to the naked eye.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 300
     },
     {
       "id": "5",
@@ -37,7 +41,8 @@
       "imageUrl": "https://example.com/images/magic_wand.jpg",
       "description": "A wand that can cast powerful spells with ease.",
       "isAvailable": false,
-      "rating": 3
+      "rating": 3,
+      "price": 120
     },
     {
       "id": "6",
@@ -45,7 +50,8 @@
       "imageUrl": "https://example.com/images/dragon_egg.jpg",
       "description": "A rare and valuable dragon egg, a must-have for any collector.",
       "isAvailable": true,
-      "rating": 4
+      "rating": 4,
+      "price": 500
     },
     {
       "id": "7",
@@ -53,7 +59,8 @@
       "imageUrl": "https://example.com/images/ring_of_power.jpg",
       "description": "A ring that grants the wearer immense strength and control over others.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 250
     },
     {
       "id": "8",
@@ -61,7 +68,8 @@
       "imageUrl": "https://example.com/images/phoenix_feather.jpg",
       "description": "A feather from a Phoenix, known for its regenerative properties.",
       "isAvailable": true,
-      "rating": null
+      "rating": null,
+      "price": 80
     },
     {
       "id": "9",
@@ -69,7 +77,8 @@
       "imageUrl": "https://example.com/images/crystal_ball.jpg",
       "description": "A ball of crystal that allows the user to see into the future.",
       "isAvailable": false,
-      "rating": 4
+      "rating": 4,
+      "price": 200
     },
     {
       "id": "10",
@@ -77,7 +86,8 @@
       "imageUrl": "https://example.com/images/scroll_of_wisdom.jpg",
       "description": "A scroll that grants the reader profound knowledge.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 60
     },
     {
       "id": "11",
@@ -85,7 +95,8 @@
       "imageUrl": "https://example.com/images/elven_bow.jpg",
       "description": "A bow crafted by the Elves, known for its precision and strength.",
       "isAvailable": true,
-      "rating": 4
+      "rating": 4,
+      "price": 180
     },
     {
       "id": "12",
@@ -93,7 +104,8 @@
       "imageUrl": "https://example.com/images/shield_of_valor.jpg",
       "description": "A shield that provides protection against all forms of attack.",
       "isAvailable": false,
-      "rating": 3
+      "rating": 3,
+      "price": 130
     },
     {
       "id": "13",
@@ -101,7 +113,8 @@
       "imageUrl": "https://example.com/images/book_of_spells.jpg",
       "description": "A book containing a vast collection of spells for every occasion.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 90
     },
     {
       "id": "14",
@@ -109,7 +122,8 @@
       "imageUrl": "https://example.com/images/gem_of_teleportation.jpg",
       "description": "A gem that allows the user to teleport to any known location.",
       "isAvailable": true,
-      "rating": 4
+      "rating": 4,
+      "price": 220
     },
     {
       "id": "15",
@@ -117,7 +131,8 @@
       "imageUrl": "https://example.com/images/potion_of_strength.jpg",
       "description": "A potion that temporarily increases the drinker's strength.",
       "isAvailable": false,
-      "rating": 3
+      "rating": 3,
+      "price": 30
     },
     {
       "id": "16",
@@ -125,7 +140,8 @@
       "imageUrl": "https://example.com/images/sorcerers_hat.jpg",
       "description": "A hat that increases the wearer's magical abilities.",
       "isAvailable": true,
-      "rating": 4
+      "rating": 4,
+      "price": 100
     },
     {
       "id": "17",
@@ -133,7 +149,8 @@
       "imageUrl": "https://example.com/images/dwarven_axe.jpg",
       "description": "A powerful axe forged by Dwarven blacksmiths.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 170
     },
     {
       "id": "18",
@@ -141,7 +158,8 @@
       "imageUrl": "https://example.com/images/potion_of_invisibility.jpg",
       "description": "A potion that renders the drinker invisible for a short time.",
       "isAvailable": false,
-      "rating": 4
+      "rating": 4,
+      "price": 50
     },
     {
       "id": "19",
@@ -149,7 +167,8 @@
       "imageUrl": "https://example.com/images/staff_of_fire.jpg",
       "description": "A staff that can summon powerful fire spells.",
       "isAvailable": true,
-      "rating": 5
+      "rating": 5,
+      "price": 240
     },
     {
       "id": "20",
@@ -157,7 +176,8 @@
       "imageUrl": "https://example.com/images/orb_of_truth.jpg",
       "description": "An orb that reveals the truth in any situation.",
       "isAvailable": true,
-      "rating": null
+      "rating": null,
+      "price": 210
     }
   ]
   

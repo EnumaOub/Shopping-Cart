@@ -19,6 +19,7 @@ describe("HomePage", () => {
                 description: expect.any(String),
                 isAvailable: expect.any(Boolean),
                 rating: expect.any(Number),
+                price: expect.any(Number),
               })
             ])
         );  

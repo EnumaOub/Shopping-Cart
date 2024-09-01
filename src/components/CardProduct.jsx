@@ -17,7 +17,7 @@ export function CardProduct({
           <h2>{name}</h2>
           {description && <p>{description}</p>}
           {rating && <p>Rating: {rating}/5</p>}
-          <p>Price: ${price.toFixed(2)}</p>
+          <p>Price: {price.toFixed(2)} G</p>
           <Button disabled={!isAvailable} onClick={onAddToCart}>
             {isAvailable ? 'Add to Cart' : 'Out of Stock'}
           </Button>
