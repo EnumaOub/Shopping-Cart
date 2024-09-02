@@ -2,6 +2,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+
+
 export function Cart() {
     return (
         <div id="cart">

@@ -16,7 +16,7 @@ describe('CardProduct', () => {
     render(<CardProduct {...product} />);
 
     const nameElement = screen.getByText(/Enchanted Sword/i);
-    const priceElement = screen.getByText(/\$50.00/i);
+    const priceElement = screen.getByText(/50.00 G/i);
     const imageElement = screen.getByAltText(/Enchanted Sword/i);
 
     expect(nameElement).toBeInTheDocument();
