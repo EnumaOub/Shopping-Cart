@@ -1,17 +1,13 @@
 import { StrictMode, createContext } from "react"
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";import './index.css'
+import { CartProvider } from "./components/CartProvider.jsx";
 
 import Home from "./routes/Home.jsx";
 import { Shop } from "./routes/Shop.jsx";
 import { Cart } from "./routes/Cart.jsx";
 
-export const ShopContext = createContext({
-  cartProd: [],
-  addToCart: (name, price, number) => {
 
-  },
-});
 
 const router = createBrowserRouter([
   {
@@ -32,6 +28,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>,
 );
