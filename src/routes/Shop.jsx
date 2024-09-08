@@ -19,7 +19,6 @@ export function Shop() {
                 imageUrl={product.imageUrl}
                 price={product.price}
                 description={product.description}
-                onAddToCart={() => console.log('TEST cart!')}
                 isAvailable={product.isAvailable}
                 rating={product.rating}
                 />

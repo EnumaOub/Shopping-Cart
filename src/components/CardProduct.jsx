@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
 import styled from 'styled-components';
+import { CartContext } from "../components/CartProvider";
 
 export function CardProduct({ 
     name, 
     imageUrl, 
     price, 
     description = '', 
-    onAddToCart = () => {}, 
     isAvailable = true, 
     rating = null }) {
+
+    const { addToCart } = useContext(CartContext);
+
+    const onAddToCart = () => {
+        addToCart(name, price.toFixed(2), 1)
+    }
+
     return (
       <Card>
         <Image src={imageUrl} alt={name} />
