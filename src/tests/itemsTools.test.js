@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, expectTypeOf } from "vitest";
 import data from '../assets/initItems.json';
-import { orderByReview, getBestSeller } from "../tools/itemsTools";
+import { orderByReview, getBestSeller, getProdById, orderById } from "../utils/itemsTools";
 
 beforeEach(() => {
     vi.clearAllMocks();
   });
 
-describe("HomePage", () => {
+describe("Utils Items", () => {
     it('should read initItems and get right data', () => {
         const items = data;
         expect(items).toHaveLength(20);
@@ -43,6 +43,19 @@ describe("HomePage", () => {
         expect(arrSizeItems.every((n)=> getBestSeller(items, n).length === n)).toBe(true);
         expect(arrSizeItems.every((n)=> JSON.stringify(getBestSeller(items, n)) === JSON.stringify(itemsOrdered.slice(0, n))))
         .toBe(true);
+    });
+
+    it('Check can get element by id', () => {
+        const items = data;
+        const itemsOrdered = orderById(items);
+        const arrSizeItems = Array.from(Array(items.length).keys());
+        console.log(arrSizeItems)
+        expect(arrSizeItems.every((n)=> {
+            console.log(n)
+            console.log(getProdById(items, String(n+1)))
+            console.log(itemsOrdered[n])
+            return JSON.stringify(getProdById(items, String(n+1))) === JSON.stringify(itemsOrdered[n])}
+        )).toBe(true); // id are numbered by position starting at one for the moment
     });
   
 })

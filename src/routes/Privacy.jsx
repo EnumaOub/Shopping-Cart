@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function Privacy() {
+export function Privacy() {
     return (
         <StyledPrivacy>
             <h1>Privacy Policy</h1>

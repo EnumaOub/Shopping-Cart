@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export default function ErrorPageGen() {
+export function ErrorPageGen() {
     return (
         <StyledErrorPage>
             <h1>404 - Page Not Found</h1>

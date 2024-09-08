@@ -6,6 +6,7 @@ import Home from '../routes/Home';
 
 const mockedUseNavigate = vi.fn();
 const mockedUseNavLink = vi.fn();
+const mockedUseLink = vi.fn();
 
 vi.mock("react-router-dom", async () => {
   const mod = await vi.importActual<typeof import("react-router-dom")>(
@@ -14,6 +15,7 @@ vi.mock("react-router-dom", async () => {
   return {
     useNavigate: () => mockedUseNavigate,
     NavLink: () => mockedUseNavLink,
+    Link: () => mockedUseLink,
   };
 });
 

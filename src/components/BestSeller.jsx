@@ -1,9 +1,9 @@
-import { getBestSeller } from "../tools/itemsTools";
+import { getBestSeller } from "../utils/itemsTools";
 import initItems from '../assets/initItems.json';
+import { CardProduct } from "../components/CardProduct";
 
 
-
-export default function BestSeller() {
+export function BestSeller() {
     const bestSellers = getBestSeller(initItems, 3)
     return (
         <div id="best-seller">

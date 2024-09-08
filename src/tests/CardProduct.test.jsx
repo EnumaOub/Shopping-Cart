@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { CardProduct } from "../components/CardProduct";
+import { useContext, useEffect } from "react";
+
+import { CartProvider, CartContext } from "../components/CartProvider";
+
+beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
 describe('CardProduct', () => {
   const product = {
@@ -13,7 +20,11 @@ describe('CardProduct', () => {
   };
 
   it('renders the product name, image, and price', () => {
-    render(<CardProduct {...product} />);
+    render(
+        <CartProvider>
+    <CardProduct {...product} />
+    </CartProvider>
+    );
 
     const nameElement = screen.getByText(/Enchanted Sword/i);
     const priceElement = screen.getByText(/50.00 G/i);
@@ -25,7 +36,11 @@ describe('CardProduct', () => {
   });
 
   it('renders the product description and rating', () => {
-    render(<CardProduct {...product} />);
+    render(
+        <CartProvider>
+    <CardProduct {...product} />
+    </CartProvider>
+    );
 
     const descriptionElement = screen.getByText(/A magical sword with enchanted powers./i);
     const ratingElement = screen.getByText(/Rating: 4.5\/5/i);
@@ -35,19 +50,14 @@ describe('CardProduct', () => {
   });
 
   it('disables the Add to Cart button when the product is unavailable', () => {
-    render(<CardProduct {...product} isAvailable={false} />);
+    render(
+        <CartProvider>
+    <CardProduct {...product} isAvailable={false} />
+    </CartProvider>
+);
 
     const buttonElement = screen.getByText(/Out of Stock/i);
     expect(buttonElement).toBeDisabled();
   });
 
-  it('calls the onAddToCart callback when the Add to Cart button is clicked', () => {
-    const onAddToCart = vi.fn();
-    render(<CardProduct {...product} onAddToCart={onAddToCart} />);
-
-    const buttonElement = screen.getByText(/Add to Cart/i);
-    buttonElement.click();
-
-    expect(onAddToCart).toHaveBeenCalledTimes(1);
-  });
 });

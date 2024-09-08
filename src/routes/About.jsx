@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function About() {
+export function About() {
     return (
         <StyledAbout>
             <h1>About Mystic Emporium</h1>

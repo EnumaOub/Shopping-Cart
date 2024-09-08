@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function ErrorPageProd() {
+export function ErrorPageProd() {
     return (
         <StyledNoProductsError>
             <h1>No Products Available</h1>

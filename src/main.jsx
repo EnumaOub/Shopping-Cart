@@ -12,6 +12,7 @@ import { About } from "./routes/About.jsx";
 import { Privacy } from "./routes/Privacy.jsx";
 import { ErrorPageGen } from "./routes/ErrorPageGen.jsx";
 import { ErrorPageProd } from "./routes/ErrorPageProd.jsx";
+import { ShopProduct } from "./components/ShopProduct.jsx";
 
 
 const router = createBrowserRouter([
@@ -25,10 +26,10 @@ const router = createBrowserRouter([
       element: <Shop />,
       loader: shopLoader,
       children: [
-          { index: true, element: <Index /> },
+          { index: true, element: <BestSeller /> },
           {
               path: "shop/product/:productId",
-              element: <CardProduct />,
+              element: <ShopProduct />,
               errorElement: < ErrorPageProd />,
           },
         ]
