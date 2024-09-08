@@ -1,6 +1,3 @@
-import { CardProduct } from "../components/CardProduct";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import initItems from '../assets/initItems.json';
 import styled from 'styled-components';
 import {
@@ -8,6 +5,9 @@ import {
     NavLink,
     useLoaderData,
 } from "react-router-dom";
+import { useState } from 'react';
+
+import { getProdByCategories } from "../utils/itemsTools";
 
 export function loader() {
     const products = initItems;
@@ -17,35 +17,58 @@ export function loader() {
 
 export function Shop() {
     const { products } = useLoaderData();
+    const [openCategories, setOpenCategories] = useState({});
+
+    const categories = getProdByCategories(products);
+
+    const toggleCategory = (category) => {
+        setOpenCategories((prevState) => ({
+          ...prevState,
+          [category]: !prevState[category]
+        }));
+    };
+
     return (
         <div id="shop">
 
             <ShopContainer>
-                <Sidebar>
-                    <h2>Products</h2>
-                    {products.map((product) => (
-                    <StyledNavLink
-                        key={product.id}
-                        to={`shop/${product.id}`}  
-                        className={({ isActive, isPending }) =>
-                            isActive
-                            ? "active"
-                            : isPending
-                            ? "pending"
-                            : ""        
-                        }
-                    >
-                        {product.name ? (
-                            <>
-                                {product.name}
-                            </>
-                        ) : (
-                            <i>No Name</i>
-                        )}{" "}
-                        {product.rating} / 5
-                    </StyledNavLink>
-                    ))}
-                </Sidebar>
+            <Sidebar>
+                <h2>Categories</h2>
+                {Object.keys(categories).map((category) => (
+                <CategorySection key={category}>
+                    <CategoryTitle onClick={() => toggleCategory(category)}>
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                    <DropdownIcon>{openCategories[category] ? '-' : '+'}</DropdownIcon>
+                    </CategoryTitle>
+                    {openCategories[category] && (
+                    <ProductList>
+                        {categories[category].map((product) => (
+                        <StyledNavLink
+                            key={product.id}
+                            to={`/shop/${product.id}`} // Link to individual product pages
+                            className={({ isActive, isPending }) =>
+                                isActive
+                                ? "active"
+                                : isPending
+                                ? "pending"
+                                : ""        
+                    }
+                        >
+                            {product.name ? (
+                                <>
+                                    {product.name}
+                                </>
+                            ) : (
+                                <i>No Name</i>
+                            )}{" "}
+                            {product.rating } / 5
+                        </StyledNavLink>
+                        ))}
+                    </ProductList>
+                    )}
+                </CategorySection>
+                ))}
+            </Sidebar>
                 <Main>
                     <Outlet /> 
                 </Main>
@@ -107,4 +130,28 @@ const StyledNavLink = styled(NavLink)`
   &:hover {
     background-color: #d35400;
   }
+`;
+
+const CategorySection = styled.div`
+  margin-bottom: 30px;
+  cursor: pointer;
+  color: #333;
+
+  &:hover {
+    color: #f39c12;
+  }
+`;
+
+const CategoryTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+`;
+
+const DropdownIcon = styled.span`
+  font-size: 1.5rem;
+`;
+
+const ProductList = styled.div`
+  padding-left: 20px;
+  margin-top: 10px;
 `;

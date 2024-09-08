@@ -17,3 +17,13 @@ export function getBestSeller(data, n) {
 export function getProdById(data, id) {
     return data.find((elem) => elem.id === id);
 }
+
+export function getProdByCategories(data) {
+    return data.reduce((acc, elem) => {
+        if (!acc[elem.category]) {
+          acc[elem.category] = [];
+        }
+        acc[elem.category].push(elem);
+        return acc;
+      }, {});
+}
