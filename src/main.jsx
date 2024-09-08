@@ -4,9 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";import '.
 import { CartProvider } from "./components/CartProvider.jsx";
 
 import Home from "./routes/Home.jsx";
-import { Shop } from "./routes/Shop.jsx";
+import { Shop, loader as shopLoader } from "./routes/Shop.jsx";
 import { Cart } from "./routes/Cart.jsx";
-
+import { CardProduct } from "./components/CardProduct.jsx";
+import { BestSeller } from "./components/BestSeller.jsx";
 
 
 const router = createBrowserRouter([
@@ -15,14 +16,20 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "shop",
-    element: <Shop />,
-    
+      path: "shop",
+      element: <Shop />,
+      loader: shopLoader,
+      children: [
+          { index: true, element: <Index /> },
+          {
+              path: "shop/:productId",
+              element: <CardProduct />,
+          },
+        ]
   },
   {
     path: "cart",
     element: <Cart />,
-    
   }
 ])
 

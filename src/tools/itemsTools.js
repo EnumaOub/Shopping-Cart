@@ -1,5 +1,4 @@
 
-
 export function orderByReview(data) {
     data.sort(({ rating: a }, { rating: b }) => b-a);
     return data
