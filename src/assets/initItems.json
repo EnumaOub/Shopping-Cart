@@ -6,7 +6,8 @@
       "description": "A sword imbued with mystical powers, capable of cutting through any material.",
       "isAvailable": true,
       "rating": 5,
-      "price": 150
+      "price": 150,
+      "category": "weapon"
     },
     {
       "id": "2",
@@ -15,7 +16,8 @@
       "description": "An amulet that enhances the wearer's magical abilities.",
       "isAvailable": false,
       "rating": 4,
-      "price": 75
+      "price": 75,
+      "category": "armor"
     },
     {
       "id": "3",
@@ -24,7 +26,8 @@
       "description": "A potion that restores health instantly.",
       "isAvailable": true,
       "rating": 5,
-      "price": 25
+      "price": 25,
+      "category": "misc"
     },
     {
       "id": "4",
@@ -33,7 +36,8 @@
       "description": "A cloak that renders the wearer invisible to the naked eye.",
       "isAvailable": true,
       "rating": 5,
-      "price": 300
+      "price": 300,
+      "category": "armor"
     },
     {
       "id": "5",
@@ -42,7 +46,8 @@
       "description": "A wand that can cast powerful spells with ease.",
       "isAvailable": false,
       "rating": 3,
-      "price": 120
+      "price": 120,
+      "category": "weapon"
     },
     {
       "id": "6",
@@ -51,7 +56,8 @@
       "description": "A rare and valuable dragon egg, a must-have for any collector.",
       "isAvailable": true,
       "rating": 4,
-      "price": 500
+      "price": 500,
+      "category": "misc"
     },
     {
       "id": "7",
@@ -60,7 +66,8 @@
       "description": "A ring that grants the wearer immense strength and control over others.",
       "isAvailable": true,
       "rating": 5,
-      "price": 250
+      "price": 250,
+      "category": "armor"
     },
     {
       "id": "8",
@@ -69,7 +76,8 @@
       "description": "A feather from a Phoenix, known for its regenerative properties.",
       "isAvailable": true,
       "rating": null,
-      "price": 80
+      "price": 80,
+      "category": "misc"
     },
     {
       "id": "9",
@@ -78,7 +86,8 @@
       "description": "A ball of crystal that allows the user to see into the future.",
       "isAvailable": false,
       "rating": 4,
-      "price": 200
+      "price": 200,
+      "category": "misc"
     },
     {
       "id": "10",
@@ -87,7 +96,8 @@
       "description": "A scroll that grants the reader profound knowledge.",
       "isAvailable": true,
       "rating": 5,
-      "price": 60
+      "price": 60,
+      "category": "misc"
     },
     {
       "id": "11",
@@ -96,7 +106,8 @@
       "description": "A bow crafted by the Elves, known for its precision and strength.",
       "isAvailable": true,
       "rating": 4,
-      "price": 180
+      "price": 180,
+      "category": "weapon"
     },
     {
       "id": "12",
@@ -105,7 +116,8 @@
       "description": "A shield that provides protection against all forms of attack.",
       "isAvailable": false,
       "rating": 3,
-      "price": 130
+      "price": 130,
+      "category": "armor"
     },
     {
       "id": "13",
@@ -114,7 +126,8 @@
       "description": "A book containing a vast collection of spells for every occasion.",
       "isAvailable": true,
       "rating": 5,
-      "price": 90
+      "price": 90,
+      "category": "misc"
     },
     {
       "id": "14",
@@ -123,7 +136,8 @@
       "description": "A gem that allows the user to teleport to any known location.",
       "isAvailable": true,
       "rating": 4,
-      "price": 220
+      "price": 220,
+      "category": "misc"
     },
     {
       "id": "15",
@@ -132,7 +146,8 @@
       "description": "A potion that temporarily increases the drinker's strength.",
       "isAvailable": false,
       "rating": 3,
-      "price": 30
+      "price": 30,
+      "category": "misc"
     },
     {
       "id": "16",
@@ -141,7 +156,8 @@
       "description": "A hat that increases the wearer's magical abilities.",
       "isAvailable": true,
       "rating": 4,
-      "price": 100
+      "price": 100,
+      "category": "misc"
     },
     {
       "id": "17",
@@ -150,7 +166,8 @@
       "description": "A powerful axe forged by Dwarven blacksmiths.",
       "isAvailable": true,
       "rating": 5,
-      "price": 170
+      "price": 170,
+      "category": "weapon"
     },
     {
       "id": "18",
@@ -159,7 +176,8 @@
       "description": "A potion that renders the drinker invisible for a short time.",
       "isAvailable": false,
       "rating": 4,
-      "price": 50
+      "price": 50,
+      "category": "misc"
     },
     {
       "id": "19",
@@ -168,7 +186,8 @@
       "description": "A staff that can summon powerful fire spells.",
       "isAvailable": true,
       "rating": 5,
-      "price": 240
+      "price": 240,
+      "category": "weapon"
     },
     {
       "id": "20",
@@ -177,7 +196,8 @@
       "description": "An orb that reveals the truth in any situation.",
       "isAvailable": true,
       "rating": null,
-      "price": 210
+      "price": 210,
+      "category": "misc"
     }
   ]
   

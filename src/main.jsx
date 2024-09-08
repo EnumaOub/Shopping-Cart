@@ -11,9 +11,35 @@ import { BestSeller } from "./components/BestSeller.jsx";
 import { ErrorPageGen } from "./routes/ErrorPageGen.jsx";
 import { ErrorPageProd } from "./routes/ErrorPageProd.jsx";
 import { ShopProduct } from "./components/ShopProduct.jsx";
+import { Root } from "./routes/Root.jsx";
 
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: < ErrorPageGen />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "shop",
+        element: <Shop />,
+        loader: shopLoader,
+        children: [
+            { index: true, element: <BestSeller /> },
+            {
+                path: "shop/:productId",
+                element: <ShopProduct />,
+                errorElement: < ErrorPageProd />,
+            },
+          ]
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+        },
+    ]
+  },
   {
     path: "/",
         element: <Home />,
@@ -26,7 +52,7 @@ const router = createBrowserRouter([
       children: [
           { index: true, element: <BestSeller /> },
           {
-              path: "shop/product/:productId",
+              path: "shop/:productId",
               element: <ShopProduct />,
               errorElement: < ErrorPageProd />,
           },

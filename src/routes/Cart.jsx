@@ -13,11 +13,6 @@ export function Cart() {
 
     return (
         <div id="cart">
-            <Header 
-            name = "Cart"
-            tagline = "Ready to Change your life ?"
-            >
-            </Header>
             <div id="cart-info">
                 {cart.map((elem) => (
                     <div key={elem.name} id={elem.name.split(" ").join('')}>
@@ -27,8 +22,6 @@ export function Cart() {
                     </div>
                 ))}
             </div>
-
-            <Footer />
         </div>
     );
 }

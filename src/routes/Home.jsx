@@ -19,11 +19,6 @@ export default function Home() {
 
     return (
         <div id="home">
-            <Header 
-            name = "Mystic Emporium"
-            tagline = "Your Gateway to Enchanted Artifacts"
-            >
-            </Header>
 
             
 
@@ -49,7 +44,7 @@ export default function Home() {
                 ))}
           </ReviewsContainer>
 
-            <Footer />
+            
         </div>
 
     );
