@@ -85,7 +85,6 @@ const ShopContainer = styled.div`
 `;
 
 const Sidebar = styled.div`
-
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -149,6 +148,7 @@ const CategoryTitle = styled.h3`
 
 const DropdownIcon = styled.span`
   font-size: 1.5rem;
+  margin-left: .5rem;
 `;
 
 const ProductList = styled.div`

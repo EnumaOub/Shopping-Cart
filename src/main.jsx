@@ -22,46 +22,24 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       {
-        path: "shop",
+        path: "/shop",
         element: <Shop />,
         loader: shopLoader,
         children: [
             { index: true, element: <BestSeller /> },
             {
-                path: "shop/:productId",
+                path: "/shop/:productId",
                 element: <ShopProduct />,
                 errorElement: < ErrorPageProd />,
             },
           ]
       },
       {
-        path: "cart",
+        path: "/cart",
         element: <Cart />,
         },
     ]
   },
-  {
-    path: "/",
-        element: <Home />,
-        errorElement: < ErrorPageGen />,
-  },
-  {
-      path: "shop",
-      element: <Shop />,
-      loader: shopLoader,
-      children: [
-          { index: true, element: <BestSeller /> },
-          {
-              path: "shop/:productId",
-              element: <ShopProduct />,
-              errorElement: < ErrorPageProd />,
-          },
-        ]
-  },
-  {
-    path: "cart",
-    element: <Cart />,
-    },
 ])
 
 createRoot(document.getElementById("root")).render(
