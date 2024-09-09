@@ -1,14 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import Icon from '@mdi/react';
+import { mdiHome, mdiCart, mdiStore } from '@mdi/js';
 
 export function NavBar() {
     return (
         <StyledNav>
       <NavLinks>
-        <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="/shop">Shop</StyledNavLink>
-        <StyledNavLink to="/cart">Cart</StyledNavLink>
+        <StyledNavLink to="/"><Icon path={mdiHome} size={1.5} /></StyledNavLink>
+        <StyledNavLink to="/shop"><Icon path={mdiStore} size={1.5} /></StyledNavLink>
+        <StyledNavLink to="/cart"><Icon path={mdiCart} size={1.5} /></StyledNavLink>
       </NavLinks>
     </StyledNav>
         
