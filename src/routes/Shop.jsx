@@ -16,65 +16,67 @@ export function loader() {
 
 
 export function Shop() {
-    const { products } = useLoaderData();
-    const [openCategories, setOpenCategories] = useState({});
+  const { products } = useLoaderData();
+  const categories = getProdByCategories(products);
+  console.log(categories)
+  const [openCategories, setOpenCategories] = useState(Object.keys(categories).reduce((a, v) => ({ ...a, [v]: false}), {}) );
 
-    const categories = getProdByCategories(products);
 
-    const toggleCategory = (category) => {
-        setOpenCategories((prevState) => ({
-          ...prevState,
-          [category]: !prevState[category]
-        }));
-    };
+  const toggleCategory = (category) => {
+    const newState = {...openCategories};
+    setOpenCategories((prevState) => ({
+      ...Object.keys(categories).reduce((a, v) => ({ ...a, [v]: false}), {}) ,
+      [category]: true
+    }));
+  };
 
-    return (
-        <div id="shop">
+  return (
+      <div id="shop">
 
-            <ShopContainer>
-            <Sidebar>
-                <h2>Categories</h2>
-                {Object.keys(categories).map((category) => (
-                <CategorySection key={category}>
-                    <CategoryTitle onClick={() => toggleCategory(category)}>
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                    <DropdownIcon>{openCategories[category] ? '-' : '+'}</DropdownIcon>
-                    </CategoryTitle>
-                    {openCategories[category] && (
-                    <ProductList>
-                        {categories[category].map((product) => (
-                        <StyledNavLink
-                            key={product.id}
-                            to={`/shop/${product.id}`} // Link to individual product pages
-                            className={({ isActive, isPending }) =>
-                                isActive
-                                ? "active"
-                                : isPending
-                                ? "pending"
-                                : ""        
-                    }
-                        >
-                            {product.name ? (
-                                <>
-                                    {product.name}
-                                </>
-                            ) : (
-                                <i>No Name</i>
-                            )}{" "}
-                            {product.rating } / 5
-                        </StyledNavLink>
-                        ))}
-                    </ProductList>
-                    )}
-                </CategorySection>
-                ))}
-            </Sidebar>
-                <Main>
-                    <Outlet /> 
-                </Main>
-            </ShopContainer>
-        </div>
-    );
+          <ShopContainer>
+          <Sidebar>
+              <h2>Categories</h2>
+              {Object.keys(categories).map((category) => (
+              <CategorySection key={category}>
+                  <CategoryTitle onClick={() => toggleCategory(category)}>
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  <DropdownIcon>{openCategories[category] ? '-' : '+'}</DropdownIcon>
+                  </CategoryTitle>
+                  {openCategories[category] && (
+                  <ProductList>
+                      {categories[category].map((product) => (
+                      <StyledNavLink
+                          key={product.id}
+                          to={`/shop/${product.id}`} // Link to individual product pages
+                          className={({ isActive, isPending }) =>
+                              isActive
+                              ? "active"
+                              : isPending
+                              ? "pending"
+                              : ""        
+                  }
+                      >
+                          {product.name ? (
+                              <>
+                                  {product.name}
+                              </>
+                          ) : (
+                              <i>No Name</i>
+                          )}{" "}
+                          {product.rating } / 5
+                      </StyledNavLink>
+                      ))}
+                  </ProductList>
+                  )}
+              </CategorySection>
+              ))}
+          </Sidebar>
+              <Main>
+                  <Outlet /> 
+              </Main>
+          </ShopContainer>
+      </div>
+  );
 }
 
 const ShopContainer = styled.div`
