@@ -23,10 +23,10 @@ export function Shop() {
 
 
   const toggleCategory = (category) => {
-    const newState = {...openCategories};
+    const newState = !openCategories[category];
     setOpenCategories((prevState) => ({
       ...Object.keys(categories).reduce((a, v) => ({ ...a, [v]: false}), {}) ,
-      [category]: true
+      [category]: newState
     }));
   };
 

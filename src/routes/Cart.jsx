@@ -9,7 +9,7 @@ import { CartContext } from "../components/CartProvider";
 export function Cart() {
     console.log("Cart")
 
-    const { cart, removeFromCart } = useContext(CartContext);
+    const { cart, removeFromCart, reduceFromCart } = useContext(CartContext);
     console.log(cart)
 
     return (
@@ -28,6 +28,9 @@ export function Cart() {
               </ProductDetails>
             <RemoveButton onClick={() => removeFromCart(elem.name)}>
                 X
+            </RemoveButton>
+            <RemoveButton onClick={() => reduceFromCart(elem.name)}>
+                -
             </RemoveButton>
           </CartItem>
         ))}
