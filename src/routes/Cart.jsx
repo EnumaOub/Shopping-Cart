@@ -9,7 +9,7 @@ import { CartContext } from "../components/CartProvider";
 export function Cart() {
     console.log("Cart")
 
-    const { cart } = useContext(CartContext);
+    const { cart, removeFromCart } = useContext(CartContext);
     console.log(cart)
 
     return (
@@ -21,9 +21,14 @@ export function Cart() {
         <CartItemsContainer>
           {cart.map((elem) => (
           <CartItem key={elem.name.split(" ").join('')}>
-            <ProductName>{elem.name}</ProductName>
-            <Quantity>Quantity: {elem.qt}</Quantity>
-            <Price>${(elem.price * elem.qt).toFixed(2)}</Price>
+            <ProductDetails>
+                <ProductName>{elem.name}</ProductName>
+                <Quantity>Quantity: {elem.qt}</Quantity>
+                <Price>${(elem.price * elem.qt).toFixed(2)}</Price>
+              </ProductDetails>
+            <RemoveButton onClick={() => removeFromCart(elem.name)}>
+                X
+            </RemoveButton>
           </CartItem>
         ))}
         </CartItemsContainer>
@@ -80,4 +85,22 @@ const Quantity = styled.p`
 const Price = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
+`;
+
+const RemoveButton = styled.button`
+  padding: 10px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+`;
+
+const ProductDetails = styled.div`
+  flex-grow: 1;
 `;

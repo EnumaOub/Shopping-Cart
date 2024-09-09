@@ -16,7 +16,7 @@ export function CardProduct({
     const { addToCart } = useContext(CartContext);
 
     const onAddToCart = () => {
-        addToCart(name, price.toFixed(2), 1)
+        addToCart(name, price.toFixed(2), 1, imageUrl)
     }
 
     return (
