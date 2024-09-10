@@ -5,7 +5,7 @@ import { CardProduct } from "../components/CardProduct";
 
 
 export function BestSeller() {
-    const bestSellers = getBestSeller(initItems, 3)
+    const bestSellers = getBestSeller(initItems, 4)
     return (
         <BestSellerContainer>
       <h1>Best Reviewed Products</h1>
