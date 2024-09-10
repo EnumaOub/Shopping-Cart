@@ -2,6 +2,8 @@
 
 import { useContext, useEffect } from "react";
 import styled from 'styled-components';
+import Icon from '@mdi/react';
+import { mdiDelete } from '@mdi/js';
 import { CartContext } from "../components/CartProvider";
 
 
@@ -27,7 +29,7 @@ export function Cart() {
                 <Price>${(elem.price * elem.qt).toFixed(2)}</Price>
               </ProductDetails>
             <RemoveButton onClick={() => removeFromCart(elem.name)}>
-                X
+                <Icon path={mdiDelete} size={1} />
             </RemoveButton>
             <RemoveButton onClick={() => reduceFromCart(elem.name)}>
                 -
