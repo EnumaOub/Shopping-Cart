@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react"
+import PropTypes from 'prop-types'; 
 
 export const CartContext = createContext();
 
@@ -64,8 +65,13 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, reduceFromCart, emptyCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, reduceFromCart, emptyCart, addFromCart }}>
       {children}
     </CartContext.Provider>
   );
+};
+
+
+CartProvider.propTypes = {
+  children: PropTypes.object,       
 };

@@ -11,7 +11,7 @@ import { CartContext } from "../components/CartProvider";
 export function Cart() {
     console.log("Cart")
 
-    const { cart, removeFromCart, reduceFromCart, emptyCart } = useContext(CartContext);
+    const { cart, removeFromCart, reduceFromCart, emptyCart, addFromCart } = useContext(CartContext);
 
     const subtotal = cart.reduce((acc, item) => acc + item.price * item.qt, 0);
     const shippingCost = 1; // Constant shipping cost in Silver
@@ -29,22 +29,26 @@ export function Cart() {
         <EmptyCart>Your cart is empty.</EmptyCart>
       ) : (
         <CartItemsContainer>
-          {cart.map((elem) => (
-          <CartItem key={elem.name.split(" ").join('')}>
-            <ProductDetails>
-                <ProductName>{elem.name}</ProductName>
-                <Quantity>Quantity: {elem.qt}</Quantity>
-                <Price>G {(elem.price * elem.qt).toFixed(2)}</Price>
-              </ProductDetails>
-            <RemoveButton onClick={() => removeFromCart(elem.name)}>
-                <Icon path={mdiDelete} size={0.5} />
-            </RemoveButton>
-            <ReduceButton onClick={() => reduceFromCart(elem.name)}>
-                -
-            </ReduceButton>
-          </CartItem>
-        ))}
-        </CartItemsContainer>
+            {cart.map((item, index) => (
+              <CartItem key={index}>
+                <ImageWrapper>
+                  <ProductImage src={item.imageUrl} alt={item.name} />
+                </ImageWrapper>
+                <ProductDetails>
+                  <ProductName>{item.name}</ProductName>
+                  <QuantityWrapper>
+                    <QuantityLabel>Quantity: {item.qt}</QuantityLabel>
+                    <ButtonWrapper>
+                      <ReduceButton onClick={() => reduceFromCart(item.name)}>-</ReduceButton>
+                      <AddingButton onClick={() => addFromCart(item.name)}>+</AddingButton>
+                    </ButtonWrapper>
+                  </QuantityWrapper>
+                  <Price>Total: {(item.price * item.qt).toFixed(2)} Gold</Price>
+                </ProductDetails>
+                <RemoveButton onClick={() => removeFromCart(item.name)}><Icon path={mdiDelete} size={.7} /></RemoveButton>
+              </CartItem>
+            ))}
+          </CartItemsContainer>
       )}
 
         <OrderSummary>
@@ -102,53 +106,93 @@ const CartItem = styled.div`
   align-items: center;
 `;
 
+const ImageWrapper = styled.div`
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+`;
+
+const ProductImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+`;
+
 const ProductName = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 `;
 
-const Quantity = styled.p`
-  font-size: 1rem;
-  color: #666;
+const QuantityWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const Price = styled.p`
-  font-size: 1.1rem;
-  font-weight: bold;
+const QuantityLabel = styled.span`
+  font-size: 1rem;
+  margin-right: 10px;
+`;
+
+
+const ButtonWrapper = styled.div`
+display: flex;
+gap: 10px;
 `;
 
 const ReduceButton = styled.button`
-    margin: .5rem;
-    padding: 10px 15px;
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
+padding: 10px;
+background-color: #e74c3c;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: #e67e22;
-    }
+&:hover {
+  background-color: #c0392b;
+}
+`;
+
+const AddingButton = styled.button`
+padding: 10px;
+background-color: #2ecc71;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+
+&:hover {
+  background-color: #27ae60;
+}
+`;
+
+const Price = styled.p`
+font-size: 1.1rem;
+font-weight: bold;
 `;
 
 const RemoveButton = styled.button`
-    padding: 10px 15px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+padding: 10px 15px;
+background-color: #e74c3c;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: #c0392b;
-    }
+&:hover {
+  background-color: #c0392b;
+}
 `;
 
 const ProductDetails = styled.div`
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 
