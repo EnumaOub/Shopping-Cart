@@ -49,6 +49,16 @@ export function CartProvider({ children }) {
   });
   };
 
+  const addFromCart = (productName) => {
+    setCart((prevCart) => {
+      return prevCart.map(item =>
+        item.name === productName
+            ? { ...item, qt: item.qt + 1 }
+            : item
+        );
+  });
+  };
+
   const emptyCart = () => {
     setCart([]);
   };

@@ -38,16 +38,18 @@ export function Shop() {
               <h2>Categories</h2>
               {Object.keys(categories).map((category) => (
               <CategorySection key={category}>
+
                   <CategoryTitle onClick={() => toggleCategory(category)}>
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                   <DropdownIcon>{openCategories[category] ? '-' : '+'}</DropdownIcon>
                   </CategoryTitle>
+
                   {openCategories[category] && (
                   <ProductList>
                       {categories[category].map((product) => (
                       <StyledNavLink
                           key={product.id}
-                          to={`/shop/${product.id}`} // Link to individual product pages
+                          to={`/shop/${product.id}`} 
                           className={({ isActive, isPending }) =>
                               isActive
                               ? "active"
@@ -63,7 +65,7 @@ export function Shop() {
                           ) : (
                               <i>No Name</i>
                           )}{" "}
-                          {product.rating } / 5
+                          <PriceContainer>{product.price } Gold</PriceContainer>
                       </StyledNavLink>
                       ))}
                   </ProductList>
@@ -84,6 +86,14 @@ const ShopContainer = styled.div`
   justify-content: space-between;
   padding: 20px;
   min-height: calc(100vh - 120px);
+`;
+
+const PriceContainer = styled.span`
+  
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  margin: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 const Sidebar = styled.div`

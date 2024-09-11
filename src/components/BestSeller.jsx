@@ -11,7 +11,6 @@ export function BestSeller() {
       <h1>Best Reviewed Products</h1>
       <ProductGrid>
         {bestSellers.map(product => (
-          <CardProductWrapper key={product.id}>
             <CardProduct
                 key={product.name.split(" ").join("")}
                 name={product.name}
@@ -21,7 +20,6 @@ export function BestSeller() {
                 isAvailable={product.isAvailable}
                 rating={product.rating}
                 />
-          </CardProductWrapper>
         ))}
       </ProductGrid>
     </BestSellerContainer>
